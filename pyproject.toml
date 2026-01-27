@@ -3,8 +3,8 @@ build-backend = "hatchling.build"
 requires = ["hatch-vcs", "hatchling"]
 
 [project]
-# TODO: Replace PROJECT-NAME
-name = "PROJECT-NAME"
+# TODO: Replace app-name
+name = "app-name"
 dynamic = ["version"]
 license = { file = "LICENSE" }
 authors = [{ name = "Neurobagel Developers" }]
@@ -13,8 +13,8 @@ maintainers = [
   { name = "Alyssa Dai", email = "alyssa.dai@mcgill.ca" },
   { name = "Arman Jahanpour", email = "arman.jahanpour@mcgill.ca" },
 ]
-# TODO: Replace PROJECT DESCRIPTION
-description = "PROJECT DESCRIPTION"
+# TODO: Replace APP DESCRIPTION
+description = "APP DESCRIPTION"
 readme = "README.md"
 classifiers = [
   "Development Status :: 1 - Planning",
@@ -36,17 +36,17 @@ test = [
   "pytest",
   "coverage",
 ]
-# TODO: Replace PROJECT-NAME
-dev = ["PROJECT-NAME[test]", "pre-commit"]
+# TODO: Replace app-name
+dev = ["app-name[test]", "pre-commit"]
 
 [project.scripts]
 # TODO: Replace entrypoint
-PROJECT-NAME = "PROJECT_NAME.cli:main"
+app-name = "app_name.cli:main"
 
 # ---- Packaging-only config ----
 # [tool.hatch.build.targets.wheel]
-# # TODO: Replace PROJECT_NAME
-# packages = ["PROJECT_NAME"]
+# # TODO: Replace app_name
+# packages = ["app_name"]
 
 # [tool.hatch.build.targets.sdist]
 # exclude = ["tests/**"]  # omit deeply nested test data from the source tarball
@@ -55,9 +55,11 @@ PROJECT-NAME = "PROJECT_NAME.cli:main"
 [tool.hatch.version]
 source = "vcs"  # use git tags to automatically determine the project version using hatch-vcs
 
-[tool.hatch.build.hooks.vcs]
-# TODO: Replace PROJECT-NAME
-version-file = "PROJECT-NAME/_version.py"  # useful for accessing dynamically calculated version inside the app (e.g., to support a --version option)
+# ---- Packaging-only config ----
+# [tool.hatch.build.hooks.vcs]
+# # TODO: Replace app-name
+# version-file = "app-name/_version.py"  # useful for accessing dynamically calculated version inside the app (e.g., to support a --version option)
+# ---- Packaging-only config ----
 
 [tool.hatch.version.raw-options]
 local_scheme = "no-local-version"  # do not append local version info to the version string to avoid PyPI upload errors
