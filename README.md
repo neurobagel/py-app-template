@@ -11,10 +11,14 @@ Template for Neurobagel Python app, for use by Neurobagel maintainers.
 
 </div>
 
+> [!WARNING]
+> This template repo contains no application code directory and cannot be installed as-is.
+
 ## To finish creating a new repo from this template
 - [Enable pre-commit ci](https://github.com/organizations/neurobagel/settings/installations/45014819) for the new repo
-- Once you have created your main application code directory, in `pyproject.toml`, 
-follow the `#TODO` comments to replace the app name placeholders
+- Once you have created your main application code directory
+  - in `pyproject.toml`, follow the `#TODO` comments to replace the app name placeholders
+  - in `.github/workflows/test.yaml`, uncomment the steps to run the tests and upload coverage
 
 ### If releasing the package on PyPI
 - In `pyproject.toml`, uncomment the section for packaging-only config
