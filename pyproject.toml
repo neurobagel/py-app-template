@@ -1,0 +1,80 @@
+[build-system]
+build-backend = "hatchling.build"
+requires = ["hatch-vcs", "hatchling"]
+
+[project]
+# TODO: Replace app-name
+name = "app-name"
+dynamic = ["version"]
+license = { file = "LICENSE" }
+authors = [{ name = "Neurobagel Developers" }]
+maintainers = [
+  { name = "Sebastian Urchs", email = "sebastian.urchs@mcgill.ca" },
+  { name = "Alyssa Dai", email = "alyssa.dai@mcgill.ca" },
+  { name = "Arman Jahanpour", email = "arman.jahanpour@mcgill.ca" },
+]
+# TODO: Replace APP DESCRIPTION
+description = "APP DESCRIPTION"
+readme = "README.md"
+classifiers = [
+  "Development Status :: 1 - Planning",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+]
+requires-python = ">=3.10"
+dependencies = [
+  # TODO: Add runtime dependencies
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest",
+  "pytest-cov",
+]
+# TODO: Replace app-name
+dev = ["app-name[test]", "pre-commit"]
+
+# ---- CLI-only config ----
+# [project.scripts]
+# # TODO: Replace entrypoint
+# app-name = "app_name.cli:main"
+# -------------------------
+
+# ---- Packaging-only config ----
+# [tool.hatch.build.targets.wheel]
+# # TODO: Replace app_name
+# packages = ["app_name"]
+
+# [tool.hatch.build.targets.sdist]
+# exclude = ["tests/**"]  # omit deeply nested test data from the source tarball
+# -------------------------------
+
+[tool.hatch.version]
+source = "vcs"  # use git tags to automatically determine the project version using hatch-vcs
+
+[tool.hatch.build.hooks.vcs]
+# TODO: Replace app-name
+version-file = "app-name/_version.py"  # useful for accessing dynamically calculated version inside the app (e.g., to support a --version option)
+
+[tool.hatch.version.raw-options]
+local_scheme = "no-local-version"  # do not append local version info to the version string to avoid PyPI upload errors
+
+[tool.black]
+line-length = 79
+
+[tool.isort]
+profile = "black"
+filter_files = true
+line_length = 79
+
+[tool.mypy]
+ignore_missing_imports = true
+no_warn_no_return = true
+warn_redundant_casts = true
+show_error_codes = true
+pretty = true
