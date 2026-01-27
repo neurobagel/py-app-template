@@ -55,11 +55,9 @@ app-name = "app_name.cli:main"
 [tool.hatch.version]
 source = "vcs"  # use git tags to automatically determine the project version using hatch-vcs
 
-# ---- Packaging-only config ----
-# [tool.hatch.build.hooks.vcs]
-# # TODO: Replace app-name
-# version-file = "app-name/_version.py"  # useful for accessing dynamically calculated version inside the app (e.g., to support a --version option)
-# ---- Packaging-only config ----
+[tool.hatch.build.hooks.vcs]
+# TODO: Replace app-name
+version-file = "app-name/_version.py"  # useful for accessing dynamically calculated version inside the app (e.g., to support a --version option)
 
 [tool.hatch.version.raw-options]
 local_scheme = "no-local-version"  # do not append local version info to the version string to avoid PyPI upload errors
