@@ -39,9 +39,11 @@ test = [
 # TODO: Replace app-name
 dev = ["app-name[test]", "pre-commit"]
 
-[project.scripts]
-# TODO: Replace entrypoint
-app-name = "app_name.cli:main"
+# ---- CLI-only config ----
+# [project.scripts]
+# # TODO: Replace entrypoint
+# app-name = "app_name.cli:main"
+# -------------------------
 
 # ---- Packaging-only config ----
 # [tool.hatch.build.targets.wheel]

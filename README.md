@@ -20,6 +20,9 @@ Template for Neurobagel Python app, for use by Neurobagel maintainers.
   - in `pyproject.toml`, follow the `#TODO` comments to replace the app name placeholders
   - in `.github/workflows/test.yaml`, uncomment the steps to run the tests and upload coverage
 
+### If the app is a CLI tool
+- In `pyproject.toml`, uncomment the section for CLI-only config
+
 ### If releasing the package on PyPI
 - In `pyproject.toml`, uncomment the section for packaging-only config
 - In the [neurobagel/workflows sync config](https://github.com/neurobagel/workflows/blob/main/.github/sync.yml), add the new repo to the sync groups for auto-releasing Python projects on PyPI
